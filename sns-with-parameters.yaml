@@ -12,4 +12,3 @@ Resources:
       Subscription:
         - Endpoint: !Ref SNSEmail
           Protocol: email
-
