@@ -10,6 +10,6 @@ Resources:
     Type: AWS::SNS::Topic
     Properties:
       Subscription:
-        Endpoint: !Ref SNSEmail
-        Protocol: email
+        - Endpoint: !Ref SNSEmail
+          Protocol: email
 
