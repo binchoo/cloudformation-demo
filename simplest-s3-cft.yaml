@@ -7,6 +7,6 @@ Resources:
 Outputs:
   BucketName:
     Value: !Ref S3Bucket
-    Description: "The name of the sample Amazon S3 bucket"
+    Description: "name of the sample Amazon S3 bucket"
     Export:
       Name: !Sub "${AWS::StackName}-${AWS::Region}-bucket"
