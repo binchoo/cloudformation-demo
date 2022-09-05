@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources:
+  NestedCall:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TempalateURL: https://bucket-from-typescript-cdk.s3.ap-northeast-1.amazonaws.com/simplest-s3-cft.yaml
+      TimeoutInMinutes: 60
+
+Outputs:
+  StackRef:
+    Value: !Ref NestedCall
+  OutputFromNestedStack:
+    Value: !GetAtt NestedCall.Outputs.BucketName

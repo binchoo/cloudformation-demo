@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Parameters:
+  EmailAddress:
+    Type: String
+    Description: Enter an email to subscribe SNS in the nested stack.
+
+Resources:
+  NestedCall:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://bucket-from-typescript-cdk.s3.ap-northeast-1.amazonaws.com/sns-with-parameters.yaml
+      TimeoutInMinutes: 60
+      Parameters:
+        SNSEmail: !Ref EmailAddress
+
+Outputs:
+  StackRef:
+    Value: !Ref NestedCall
+    
